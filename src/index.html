@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const name = () =>{
+    console.log(this);
+} 
+const obj = {
+    name:'evanzhe',
+    age:28
+}
+const obj2 = {
+    addr:'eemo'
+}
+let obj3  = Object.create(obj)
+console.log(obj3);
+let obj4 = {
+    firstName:'evan',
+    lastName:'zhe'
+}
+Object.defineProperties(obj4,{
+    allName: {
+        get:function ()
+        {
+            return this.firstName + '-' + this.lastName
+        },
+        set:function(value){
+            let str = value.split('-')
+            console.log(str);
+            this.firstName = str[0]
+            this.lastName = str[1]
+        }
+    }
+})
+console.log(obj4.allName);
+obj4.firstName = 'tim'
+obj4.lastName = 'evan'
+console.log(obj4.allName);
+const arr = ['str','zhe', 'demo', 'demo',' evanzhe']
+//返回当前元素的数值下标
+const index = arr.lastIndexOf('zhe')
+
+console.log(index);
+//for each 
+arr.forEach((item)=> {
+    console.log(item);
+})
+    </script>
+</body>
+</html>

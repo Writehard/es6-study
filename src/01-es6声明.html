@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        1、关于 var 
+        es5 使用 var 来定义变量
+        在es6 中使用let const 
+        let 声明 变量
+        const 声明 常量
+        */
+        {
+           var a=1
+        }
+        // 总结 var 声明的变量不具备块级作用域特性
+        function sayVar() {
+            //这是作用域的关系 和 var 无关
+            var b = 2
+            console.log('我是函数中的变量b', b);
+        }
+        sayVar()
+        function globalVar() {
+            c = 12
+            //没有使用关键字 调用函数的时候c成为全局属性 在任意位置访问
+        console.log('@@@@@@',c);
+        }
+        globalVar()
+        console.log("@@@@",c);
+        // console.log('我在外部访问变量b',b); //error
+        //虽然在块中 但是var是全局声明的，所以在区块中声明，仍然起到全局的作用
+        //2-关于let
+        {
+            let d = 123
+        }
+        //1-let 具有块级作用域
+        //应用
+        //let 可以防止数据污染 
+        // console.log(d);
+        let arr = [1,2,3,4,5,6,7,8,9,10]
+        for (let i = 0; i < arr.length; i++) {
+                console.log(arr[i]);
+        }
+        // console.log(i);
+        /*let 和 var 的区别
+        var- 在循环体外定义的变量，在全局作用域下
+        let-每次循环都会产生一个块级作用域，每个块级作用域都会重新定义一个新的变量
+        总结减少var 的使用 避免全局命名空间污染
+        */
+        //3-const
+        const  name = 'evanzhe'
+        //name = 'sdad'//error
+        
+    </script>
+</body>
+</html>

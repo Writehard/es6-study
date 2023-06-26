@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <input type="button" value="aa">
+        <input type="button" value="bb">
+        <input type="button" value="cc">
+        <input type="button" value="dd">
+        <script>
+            var btns = document.getElementsByTagName('input')
+            for (var i = 0; i < btns.length; i++) {
+                    btns[i].onclick = function () {
+                        alert(i)
+                    }                
+            }
+            let arr = [1,2,3,4]
+            let str  = 'evanzhe'
+            let [a,b,c,d] =str
+            let obj = {
+                name:'zhe',
+                age:19
+            }
+            let {name:myName, age:myAge } = obj
+            console.log(myName,myAge);
+        </script>
+</body>
+</html>
